@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.product {
+  border: solid coral 2px;
+  margin: 30px;
+  padding: 30px;
+}
