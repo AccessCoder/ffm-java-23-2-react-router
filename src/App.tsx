@@ -6,6 +6,7 @@ import DetailsPage from "./DetailsPage.tsx";
 import {useState} from "react";
 import {Product} from "./Product.ts";
 import ProductGallery from "./ProductGallery.tsx";
+import AddProduct from "./AddProduct.tsx";
 
 
 function App() {
@@ -39,6 +40,14 @@ function App() {
         ]
     )
 
+    //Methode zum Aktualisieren der Produktliste
+    function updateProducts(newProduct:Product){
+        setProducts([...products,newProduct])
+        //Hier benutzen wir den sog. spread Operator (...alterArray, neuesObjekt)
+        //um einen neuen Array zu erstellen, den wir dann in den Setter übergeben
+    }
+
+
   return (
     <>
         <h1>Schoko-Laden</h1>
@@ -46,6 +55,7 @@ function App() {
         <Routes>
             <Route path={"/"} element={<Welcome/>}/>
             <Route path={"/sweets"} element={<ProductGallery characters={products}/>}/>
+            <Route path={"/addproduct"} element={<AddProduct addNewProduct={updateProducts}/>}/>
             <Route path={"/detail/:id"} element={<DetailsPage/>}/>
         </Routes>
     </>

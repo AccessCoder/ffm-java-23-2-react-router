@@ -4,7 +4,8 @@ export default function Navigation(){
     return(
         <>
         <Link to={"/"}>Home </Link>
-        <Link to={"/sweets"}> Products</Link>
+        <Link to={"/sweets"}> Products </Link>
+        <Link to={"/addproduct"}> Admin </Link>
         </>
     )
 }
